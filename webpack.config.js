@@ -1,3 +1,5 @@
+"use strict";
+
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -33,6 +35,7 @@ export default {
     rules: [
       {
         test: /\.css$/,
+        exclude: /node_modules/,
         use: [
           "style-loader",
           "css-loader",
