@@ -9,7 +9,7 @@ export default {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist/"),
-    publicPath: "/dist/",
+    publicPath: "./dist",
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
@@ -19,10 +19,10 @@ export default {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname),
+      directory: path.join(__dirname, "public"),
     },
     devMiddleware: {
-      publicPath: "/dist/",
+      publicPath: "public",
     },
     watchFiles: ["src/**/*"],
     compress: true,
@@ -62,6 +62,10 @@ export default {
             },
           },
         ],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
       },
     ],
   },
