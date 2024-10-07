@@ -1,5 +1,3 @@
-"use strict";
-
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -7,14 +5,17 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default {
-  entry: "./src/app.jsx",
+  entry: "./src/main.tsx",
   output: {
-    path: path.resolve(__dirname, "dist/"),
     filename: "bundle.js",
+    path: path.resolve(__dirname, "dist/"),
     publicPath: "/dist/",
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".tsx", ".ts", ".js"],
+    alias: {
+      "@": path.resolve(__dirname, "src/"),
+    },
   },
   devServer: {
     static: {
@@ -26,13 +27,26 @@ export default {
     watchFiles: ["src/**/*"],
     compress: true,
     host: "127.0.0.1",
-    port: 8080,
+    port: 3000,
     hot: true,
     liveReload: true,
-    open: true,
   },
   module: {
     rules: [
+      {
+        test: /\.(js|jsx|ts|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [
+              "@babel/preset-env",
+              ["@babel/preset-react", { runtime: "automatic" }],
+              "@babel/preset-typescript",
+            ],
+          },
+        },
+      },
       {
         test: /\.css$/,
         exclude: /node_modules/,
@@ -48,16 +62,6 @@ export default {
             },
           },
         ],
-      },
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
-          },
-        },
       },
     ],
   },
