@@ -1,8 +1,10 @@
+![](./public/img.png)
+
 ##### Features
 
 - [x] webpack
 - [x] babel
-- [x] tailwind and postcss loader
+- [x] tailwind and postcss
 - [x] Prettier: Automatic Class Sorting
 - [x] React
 
