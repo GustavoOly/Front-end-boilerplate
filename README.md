@@ -1,4 +1,4 @@
-##### Features
+## Features
 
 - [x] webpack
 - [x] babel
@@ -6,7 +6,7 @@
 - [x] Prettier: Automatic Class Sorting
 - [x] React
 
-##### Use
+## Use
 
 ```shell
 git clone https://github.com/GustavoOly/Front-end-boilerplate.git
@@ -17,9 +17,9 @@ cd Front-end-boilerplate
 ```
 
 ```shell
-npm install
+pnpm install
 ```
 
-```
-npm run dev
+```bash
+pnpm dev
 ```
