@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default {
-  entry: "./src/app.jsx",
+  entry: "./src/App.jsx",
   output: {
     path: path.resolve(__dirname, "dist/"),
     filename: "bundle.js",
@@ -26,7 +26,7 @@ export default {
     watchFiles: ["src/**/*"],
     compress: true,
     host: "127.0.0.1",
-    port: 8080,
+    port: 3000,
     hot: true,
     liveReload: true,
     open: true,
