@@ -1,3 +1,5 @@
+![](./public/mockup.png)
+
 ## Features
 
 - [x] webpack
@@ -17,9 +19,9 @@ cd Front-end-boilerplate
 ```
 
 ```shell
-pnpm install
+yarn install
 ```
 
 ```bash
-pnpm dev
+yarn run dev
 ```
